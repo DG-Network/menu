@@ -9,27 +9,6 @@ if [ "$MYIP" = "" ]; then
 	MYIP=$(wget -qO- ipv4.icanhazip.com)
 fi
 
-#vps="zvur";
-vps="aneka";
-
-#if [[ $vps = "zvur" ]]; then
-#source="http://"
-#else
-source="https://raw.githubusercontent.com/DG-Network"
-#fi
-
-# check registered ip
-wget -q -O IP $source/register/master/daftar-IP.txt
-if ! grep -w -q $MYIP IP; then
-echo "Maaf, hanya IP yang terdaftar yang bisa menggunakan SCRIPT ini!"
-if [[ $vps = "zvur" ]]; then
-echo "Hubungi Admin DG-Network: SoelHadi_Newbie (WhatsApp: 087864334333)"
-else
-echo "Hubungi Admin DG-Network: SoelHadi_Newbie (WhatsApp: 087864334333)"
-fi
-rm -f /root/IP
-exit
-fi
 #myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
 
 flag=0
