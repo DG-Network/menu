@@ -19,7 +19,7 @@ source="https://raw.githubusercontent.com/DG-Network"
 #fi
 
 # check registered ip
-wget -q -O IP $source/register/daftar-IP.txt
+wget -q -O IP $source/register/master/daftar-IP.txt
 if ! grep -w -q $MYIP IP; then
 echo "Maaf, hanya IP yang terdaftar yang bisa menggunakan SCRIPT ini!"
 if [[ $vps = "zvur" ]]; then
