@@ -47,7 +47,7 @@ echo
 	#echo -e "\e[032;1mSystem uptime:\e[0m $up"
 lolcat -F 0.3 -S 0 /usr/bin/bannermenu
 echo "                         IP Host: $MYIP" | lolcat
-date +"                           %A, %d/%m/%Y" | lolcat
+date +"                            %A, %d/%m/%Y" | lolcat
 date +"                               %H:%M %Z" | lolcat
 echo ""
 echo ""
