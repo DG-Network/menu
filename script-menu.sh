@@ -52,7 +52,7 @@ date +"                                          %H:%M:%S %Z" | lolcat
 echo ""
 echo ""
 PS3='Silahkan ketik nomor pilihan anda kemudian tekan ENTER: '
-options=("Create Akun SSH/OpenVPN" "Create Akun Trial" "Perpanjang Masa Aktif User" "Ganti Password Akun SSH/OpenVPN" "Daftar Akun Dan Expired" "Hapus Akun" "Monitoring Akun Dan Tendang" "Monitor Akun Login" "Daftar Akun Aktif" "Daftar Akun Expired" "Disable Akun Expired" "Hapus Akun Expired" "Banned Akun" "Unbanned Akun" "Informasi RAM" "Speedtest" "Benchmark" "Nonaktifkan Auto Kill Multi Login" "Aktifkan Auto Kill Multi Login" "Ganti Password VPS" "Bersihkan Cache RAM" "Edit Banner SSH" "Edit Banner Menu" "Restart Webmin" "Restart VPS" "Restart Dropbear" "Restart OpenSSH" "Restart Squid Proxy" "Restart OpenVPN" "Ganti Port OpenSSH" "Ganti Port Dropbear" "Ganti Port Squid Proxy" "Ganti Port OpenVPN" "Quit")
+options=("Create Akun SSH/OpenVPN" "Create Akun Trial" "Perpanjang Masa Aktif User" "Ganti Password Akun SSH/OpenVPN" "Daftar Akun Dan Expired" "Hapus Akun" "Monitoring Akun Dan Tendang" "Monitor Akun Login" "Daftar Akun Aktif" "Daftar Akun Expired" "Disable Akun Expired" "Hapus Akun Expired" "Banned Akun" "Unbanned Akun" "Informasi RAM" "Speedtest" "Benchmark" "Non-Aktifkan Auto Kill Multi Login" "Aktifkan Auto Kill Multi Login" "Bersihkan Cache RAM" "Edit Banner SSH" "Restart Webmin" "Restart VPS" "Restart Dropbear" "Restart OpenSSH" "Restart Squid Proxy" "Restart OpenVPN" "Ganti Port OpenSSH" "Ganti Port Dropbear" "Ganti Port Squid Proxy" "Ganti Port OpenVPN" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -133,6 +133,7 @@ do
 	service cron restart
 	service ssh restart
 	service dropbear restart
+	clear
 	echo "                 AUTO KILL LOGIN has been ACTIVATED !!!" | boxes -d capgirl | lolcat
         echo "-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-_-_-" | lolcat
 	break
@@ -150,6 +151,7 @@ do
 	echo ""
 	echo "Finishing..." | lolcat
 	free -h
+	clear
 	echo "          DONE....!!! RAM's CACHE has been CLEARED." | boxes -d girl | lolcat
 	echo "-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-_-_-" | lolcat
         break
@@ -186,7 +188,7 @@ do
 	;;
 	"Informasi RAM")
 	clear
-	ps-mem | boxes -d girl | lolcat
+	ps-mem | boxes -d diamonds | lolcat
 	echo "-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-_-_-" | lolcat
 	break
 	;;
@@ -200,7 +202,7 @@ do
 	;;
 	"Benchmark")
 	clear
-	echo "          BENCHMARK" | boxes -d girl | lolcat
+	echo "        》》》  BENCHMARK  《《《" | boxes -d girl | lolcat
 	benchmark | lolcat
 	break
 	;;
@@ -214,17 +216,6 @@ do
 	read -p "Tekan ENTER untuk melanjutkan........................ " | lolcat
 	nano /bannerssh
 	service dropbear restart && service ssh restart
-	break
-	;;
-	"Edit Banner Menu")
-	clear
-	echo "                    INSTRUCTIONS !!!
-
-          1.) Simpan text (CTRL + X, lalu ketik Y dan tekan Enter)
-          2.) Membatalkan edit text (CTRL + X, lalu ketik N dan tekan Enter)" | boxes -d girl | lolcat
-	echo "-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-_-_-" | lolcat
-	read -p "Tekan ENTER untuk melanjutkan........................ " | lolcat
-	nano /usr/bin/bannermenu
 	break
 	 ;;
 	"Restart Webmin")
