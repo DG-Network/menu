@@ -230,6 +230,7 @@ do
 	"Restart Webmin")
 	clear
 	service webmin restart
+	clear
 	echo "                   INFO !!!
 
           WEBMIN has been RESTARTED" | boxes -d capgirl | lolcat
@@ -239,6 +240,7 @@ do
 	 "Restart VPS")
 	 clear
 	 reboot
+	 clear
 	 echo "                   INFO !!!
 
              VPS has been RESTARTED" | boxes -d girl | lolcat
@@ -248,6 +250,7 @@ do
 	 "Restart Dropbear")
 	 clear
 	 service dropbear restart
+	 clear
 	 echo "                     INFO !!!
 
           DROPBEAR has been RESTARTED" | boxes -d capgirl | lolcat
@@ -257,6 +260,7 @@ do
 	 "Restart OpenSSH")
 	 clear
 	 service ssh restart
+	 clear
 	 echo "                    INFO !!!
 
           OpenSSH has been RESTARTED" | boxes -d girl | lolcat
@@ -266,6 +270,7 @@ do
 	 "Restart OpenVPN")
 	 clear
 	 service openvpn restart
+	 clear
 	 echo "                    INFO !!!
 
           OpenVPN has been RESTARTED" | boxes -d capgirl | lolcat
@@ -275,6 +280,7 @@ do
 	 "Restart Squid Proxy")
 	 clear
 	 service squid3 restart
+	 clear
 	 echo "                   INFO !!!
 
           SQUID3 has been RESTARTED" | boxes -d girl | lolcat
