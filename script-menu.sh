@@ -46,13 +46,13 @@ echo
 	#echo -e "\e[032;1mTotal amount of swap:\e[0m $swap MB"
 	#echo -e "\e[032;1mSystem uptime:\e[0m $up"
 lolcat -F 0.3 -S 0 /usr/bin/bannermenu
-echo "                                    Server: $MYIP" | lolcat
-date +"                                       %A, %d-%m-%Y" | lolcat
-date +"                                          %H:%M:%S %Z" | lolcat
+echo "                         IP Host: $MYIP" | lolcat
+date +"                           %A, %d/%m/%Y" | lolcat
+date +"                               %H:%M %Z" | lolcat
 echo ""
 echo ""
 PS3='Silahkan ketik nomor pilihan anda kemudian tekan ENTER: '
-options=("Create Akun SSH/OpenVPN" "Create Akun Trial" "Perpanjang Masa Aktif User" "Ganti Password Akun SSH/OpenVPN" "Daftar Akun Dan Expired" "Hapus Akun" "Monitoring Akun Dan Tendang" "Monitor Akun Login" "Daftar Akun Aktif" "Daftar Akun Expired" "Disable Akun Expired" "Hapus Akun Expired" "Banned Akun" "Unbanned Akun" "Informasi RAM" "Speedtest" "Benchmark" "Non-Aktifkan Auto Kill Multi Login" "Aktifkan Auto Kill Multi Login" "Bersihkan Cache RAM" "Edit Banner SSH" "Restart Webmin" "Restart VPS" "Restart Dropbear" "Restart OpenSSH" "Restart Squid Proxy" "Restart OpenVPN" "Ganti Port OpenSSH" "Ganti Port Dropbear" "Ganti Port Squid Proxy" "Ganti Port OpenVPN" "Quit")
+options=("Create Akun SSH/OpenVPN" "Create Akun Trial" "Perpanjang Masa Aktif Akun" "Ganti Password Akun SSH/OpenVPN" "Daftar Akun Dan Expired" "Hapus Akun" "Monitoring Akun Dan Tendang" "Monitor Akun Login" "Daftar Akun Aktif" "Daftar Akun Expired" "Disable Akun Expired" "Hapus Akun Expired" "Banned Akun" "Unbanned Akun" "Informasi RAM" "Speedtest" "Informasi VPS" "Non-Aktifkan Auto Kill Multi Login" "Aktifkan Auto Kill Multi Login" "Bersihkan Cache RAM" "Edit Banner SSH" "Restart Webmin" "Restart VPS" "Restart Dropbear" "Restart OpenSSH" "Restart Squid Proxy" "Restart OpenVPN" "Ganti Port OpenSSH" "Ganti Port Dropbear" "Ganti Port Squid Proxy" "Ganti Port OpenVPN" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -200,9 +200,9 @@ do
 	echo "-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-_-_-" | lolcat
 	break
 	;;
-	"Benchmark")
+	"Informasi VPS")
 	clear
-	echo "        》》》  BENCHMARK  《《《" | boxes -d girl | lolcat
+	echo "        》》》  INFORMASI VPS  《《《" | boxes -d girl | lolcat
 	benchmark | lolcat
 	break
 	;;
@@ -214,7 +214,7 @@ do
           2.) Membatalkan edit text (CTRL + X, lalu ketik N dan tekan Enter)" | boxes -d capgirl | lolcat
 	echo "-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-_-_-" | lolcat
 	read -p "Tekan ENTER untuk melanjutkan........................ " | lolcat
-	nano /bannerssh
+	nano /etc/pesan-server
 	service dropbear restart && service ssh restart
 	break
 	 ;;
