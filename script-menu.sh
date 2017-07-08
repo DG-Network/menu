@@ -63,7 +63,7 @@ do
             ;;
 	"Create Akun Trial")
 	clear
-	user-gen
+	trial
 	break
 	;;
 	"Perpanjang Masa Aktif Akun")
@@ -299,7 +299,7 @@ do
 		service dropbear start
 		service openvpn start
 		clear
-		echo "                   INFO !!!
+		echo "                       INFO !!!
 
 		OpenSSH Updated Port: $PORT" | boxes -d girl | lolcat
 		echo "-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-_-_-" | lolcat
@@ -324,7 +324,7 @@ do
 	    service ssh start
 	    service openvpn start
 		clear
-            echo "                   INFO !!!
+            echo "                       INFO !!!
 
 		DROPBEAR Updated Port: $PORT" | boxes -d girl | lolcat
 		echo "-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-_-_-" | lolcat
@@ -334,8 +334,8 @@ do
 	 clear
 	 echo "                               INSTRUCTIONS !!!
 
-          1.) Silahkan ganti port SQUID PROXY anda, lalu klik ENTER
-          2.) Port 1 dan Port 2 tidak boleh sama !!!" | boxes -d capgirl | lolcat
+1.) Silahkan ganti port SQUID PROXY anda, lalu klik ENTER
+2.) Port 1 dan Port 2 tidak boleh sama !!!" | boxes -d capgirl | lolcat
 	echo "-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-_-_-" | lolcat
 	    echo -e "Port Squid3 1: 8080"
 	    read -p "Port Squid3 2: " -e -i 3128 PORT
@@ -344,9 +344,9 @@ do
             sed -i "23s/http_port [0-9]*/http_port $PORT/" /etc/squid3/squid.conf
 			service squid3 restart
 		clear
-            echo "                   INFO !!!
+            echo "                        INFO !!!
 
-		DROPBEAR Updated Port: $PORT" | boxes -d girl | lolcat
+		SQUID3 Updated Port: $PORT" | boxes -d girl | lolcat
 		echo "-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-_-_-" | lolcat
 		break		
 		;;
@@ -369,7 +369,7 @@ Silahkan ganti port OpenVPN anda, lalu klik ENTER !!!" | boxes -d capgirl | lolc
 	    service dropbear start
 	    service ssh start
 		clear
-		echo "                  INFO !!!
+		echo "                      INFO !!!
 
 		OpenVPN Updated Port: $PORT" | boxes -d girl | lolcat
 		echo "-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-_-_-" | lolcat
