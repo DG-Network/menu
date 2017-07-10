@@ -1,22 +1,46 @@
 #!/bin/bash
+clear
+
+flag=0
+if [[ $USER != "root" ]]; then
+	echo "Maaf, Anda harus menjalankan ini sebagai root"
+	exit
+fi
+#MYIP=$(wget -qO- ipv4.icanhazip.com);
 
 # get the VPS IP
 #ip=`ifconfig venet0:0 | grep 'inet addr' | awk {'print $2'} | sed s/.*://`
+
 MYIP=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
 #MYIP=$(ifconfig | grep 'inet addr:' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | cut -d: -f2 | awk '{ print $1}' | head -1)
 if [ "$MYIP" = "" ]; then
 	MYIP=$(wget -qO- ipv4.icanhazip.com)
 fi
-#MYIP=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
 
-flag=0
+#vps="soned";
+vps="soned";
 
-echo
+#if [[ $vps = "zvur" ]]; then
+	#source="http://"
+#else
+	source="https://raw.githubusercontent.com/DG-Network"
+#fi
 
-	#MYIP=$(ifconfig | grep 'inet addr:' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | cut -d: -f2 | awk '{ print $1}' | head -1)
-	#if [ "$MYIP" = "" ]; then
-		#MYIP=$(wget -qO- ipv4.icanhazip.com)
-	#fi
+# go to root
+cd
+
+# check registered ip
+wget -q -O IP $source/register/master/IP.txt
+if ! grep -w -q $MYIP IP; then
+	echo "Maaf, hanya IP yang terdaftar yang bisa menggunakan script ini!"
+	if [[ $vps = "zvur" ]]; then
+		echo "Hubungi: editor YUSUF-ARDIANSYAH atau (082139743432)"
+	else
+		echo "Hubungi: editor YUSUF-ARDIANSYAH atau (082139743432)"
+	fi
+	rm -f /root/IP
+	exit
+fi
 
 	clear
 
@@ -379,3 +403,6 @@ Silahkan ganti port OpenVPN anda, lalu klik ENTER !!!" | boxes -d capgirl | lolc
         *) echo Unknown Option, Please Try Again!!!;
 	esac
 done
+
+cd `/
+rm -f /root/IP
