@@ -17,10 +17,10 @@ if [ "$MYIP" = "" ]; then
 	MYIP=$(wget -qO- ipv4.icanhazip.com)
 fi
 
-#vps="soned";
-vps="soned";
+#vps="dg-network";
+vps="dg-network";
 
-#if [[ $vps = "zvur" ]]; then
+#if [[ $vps = "dg-network" ]]; then
 	#source="http://"
 #else
 	source="https://raw.githubusercontent.com/DG-Network"
@@ -32,13 +32,13 @@ cd
 # check registered ip
 wget -q -O IP $source/register/master/IP.txt
 if ! grep -w -q $MYIP IP; then
-	echo "Maaf, hanya IP yang terdaftar yang bisa menggunakan script ini!"
+	echo "Sorry, hanya IP yang terdaftar yang bisa menggunakan SCRIPT PREMIUM ini!"
 	if [[ $vps = "zvur" ]]; then
-		echo "Hubungi: editor YUSUF-ARDIANSYAH atau (082139743432)"
+		echo "Silahkan Hubungi Admin DG-Network | SoelHadi_Newbie (WhatsApp: 087864334333)"
 	else
-		echo "Hubungi: editor YUSUF-ARDIANSYAH atau (082139743432)"
+		echo "Silahkan Hubungi Admin DG-Network | SoelHadi_Newbie (WhatsApp: 087864334333)"
 	fi
-	rm -f /root/IP
+	rm /root/IP
 	exit
 fi
 
