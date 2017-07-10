@@ -404,5 +404,4 @@ Silahkan ganti port OpenVPN anda, lalu klik ENTER !!!" | boxes -d capgirl | lolc
 	esac
 done
 
-cd `/
-rm -f /root/IP
+rm /root/IP
