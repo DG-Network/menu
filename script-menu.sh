@@ -403,6 +403,7 @@ Silahkan ganti port OpenVPN anda, lalu klik ENTER !!!" | boxes -d capgirl | lolc
 	 echo "                     INFO !!!
          Your SCRIPT MENU is Up To Date" | boxes -d capgirl | lolcat
 	 echo "-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-_-_-" | lolcat
+	 
 	"EXIT")
 	
 	break
