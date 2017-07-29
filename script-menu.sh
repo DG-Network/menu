@@ -391,7 +391,7 @@ Silahkan ganti port OpenVPN anda, lalu klik ENTER !!!" | boxes -d capgirl | lolc
 		echo "                      INFO !!!
 
 		OpenVPN Updated Port: $PORT" | boxes -d girl | lolcat
-		echo "       -_-_-_-_-_-_-_-_-_-_-_-_-_-_-" | lolcat
+		echo "         _-_-_-_-_-_-_-_-_-_-" | lolcat
 	 break
 	 ;;
 	 "Update Script Menu")
