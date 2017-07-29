@@ -391,7 +391,7 @@ Silahkan ganti port OpenVPN anda, lalu klik ENTER !!!" | boxes -d capgirl | lolc
 		echo "                      INFO !!!
 
 		OpenVPN Updated Port: $PORT" | boxes -d girl | lolcat
-		echo "         _-_-_-_-_-_-_-_-_-_-" | lolcat
+		echo "                    _-_-_-_-_-_-_-_-_-_-" | lolcat
 	 break
 	 ;;
 	 "Update Script Menu")
@@ -400,9 +400,10 @@ Silahkan ganti port OpenVPN anda, lalu klik ENTER !!!" | boxes -d capgirl | lolc
 	 wget -O menu "https://raw.githubusercontent.com/DG-Network/menu/master/script-menu.sh"
 	 chmod +x menu
 	 clear
-	 echo "                     INFO !!!
-         Your SCRIPT MENU is Up To Date" | boxes -d capgirl | lolcat
-	 echo "-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-_-_-" | lolcat
+	 echo "                      INFO !!!
+
+		Your SCRIPT MENU is Up to Date" | boxes -d girl | lolcat
+		echo "                    _-_-_-_-_-_-_-_-_-_-" | lolcat
 	 break
 	 ;;
 	"EXIT")
