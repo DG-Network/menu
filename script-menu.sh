@@ -138,25 +138,9 @@ do
 	;;
 	"Aktifkan Auto Kill Multi Login")
 	read -p "Isikan Maximal User Login (1-2): " MULTILOGIN2
-	#echo "@reboot root /root/userlimit.sh" > /etc/cron.d/userlimitreboot
-	echo "* * * * * root /usr/bin/userlimit.sh $MULTILOGIN2" > /etc/cron.d/userlimit1
-	echo "* * * * * root sleep 10; /usr/bin/userlimit.sh $MULTILOGIN2" > /etc/cron.d/userlimit2
-	echo "* * * * * root sleep 20; /usr/bin/userlimit.sh $MULTILOGIN2" > /etc/cron.d/userlimit3
-	echo "* * * * * root sleep 30; /usr/bin/userlimit.sh $MULTILOGIN2" > /etc/cron.d/userlimit4
-	echo "* * * * * root sleep 40; /usr/bin/userlimit.sh $MULTILOGIN2" > /etc/cron.d/userlimit5
-	echo "* * * * * root sleep 50; /usr/bin/userlimit.sh $MULTILOGIN2" > /etc/cron.d/userlimit6
-	#echo "@reboot root /root/userlimitssh.sh" >> /etc/cron.d/userlimitreboot
-	echo "* * * * * root /usr/bin/userlimitssh.sh $MULTILOGIN2" >> /etc/cron.d/userlimit1
-	echo "* * * * * root sleep 11; /usr/bin/userlimitssh.sh $MULTILOGIN2" >> /etc/cron.d/userlimit2
-	echo "* * * * * root sleep 21; /usr/bin/userlimitssh.sh $MULTILOGIN2" >> /etc/cron.d/userlimit3
-	echo "* * * * * root sleep 31; /usr/bin/userlimitssh.sh $MULTILOGIN2" >> /etc/cron.d/userlimit4
-	echo "* * * * * root sleep 41; /usr/bin/userlimitssh.sh $MULTILOGIN2" >> /etc/cron.d/userlimit5
-	echo "* * * * * root sleep 51; /usr/bin/userlimitssh.sh $MULTILOGIN2" >> /etc/cron.d/userlimit6
-	service cron restart
-	service ssh restart
-	service dropbear restart
+	user-limit $MULTILOGIN2
 	clear
-	echo "                 AUTO KILL LOGIN has been ACTIVATED !!!" | boxes -d capgirl | lolcat
+	echo "                 AUTO KILL LOGIN {$MULTILOGIN2} has been ACTIVATED !!!" | boxes -d capgirl | lolcat
         echo "-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-_-_-" | lolcat
 	break
 	;;
@@ -375,12 +359,13 @@ do
 
 Silahkan ganti port OpenVPN anda, lalu klik ENTER !!!" | boxes -d capgirl | lolcat
 	echo "-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-_-_-" | lolcat
-            read -p "Port: " -e -i 55 PORT
+            read -p "Port: " -e -i 1194 PORT
 			clear
 	    service dropbear stop
 	    service ssh stop
 	    service openvpn stop
             sed -i "s/port [0-9]*/port $PORT/" /etc/openvpn/server.conf
+	    rm /home/vps/public_html/client.ovpn
 	    cp /etc/openvpn/client.ovpn /home/vps/public_html/client.ovpn
             sed -i "s/ipserver ports/$MYIP $PORT/g" /home/vps/public_html/client.ovpn
 	    sed -i "s/ipserver/$MYIP/g" /home/vps/public_html/client.ovpn
