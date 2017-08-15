@@ -74,7 +74,7 @@ date +"                               %H:%M %Z" | lolcat
 echo ""
 echo ""
 PS3='Silahkan ketik nomor pilihan anda kemudian tekan ENTER: '
-options=("Create Akun SSH/OpenVPN" "Create Akun Trial" "Perpanjang Masa Aktif Akun" "Ganti Password Akun SSH/OpenVPN" "Daftar Akun Dan Expired" "Hapus Akun" "Monitoring Akun Dan Tendang" "Monitor Akun Login" "Daftar Akun Aktif" "Daftar Akun Expired" "Disable Akun Expired" "Hapus Akun Expired" "Banned Akun" "Unbanned Akun" "Informasi RAM" "Speedtest" "Informasi VPS" "Non-Aktifkan Auto Kill Multi Login" "Aktifkan Auto Kill Multi Login" "Bersihkan Cache RAM" "Edit Banner SSH" "Restart Webmin" "Restart VPS" "Restart Dropbear" "Restart OpenSSH" "Restart Squid Proxy" "Restart OpenVPN" "Ganti Port OpenSSH" "Ganti Port Dropbear" "Ganti Port Squid Proxy" "Ganti Port OpenVPN" "Update Script Menu" "EXIT" "Install/Re-Install OpenVPN")
+options=("Create Akun SSH/OpenVPN" "Create Akun Trial" "Perpanjang Masa Aktif Akun" "Ganti Password Akun SSH/OpenVPN" "Daftar Akun Dan Expired" "Hapus Akun" "Monitoring Akun Dan Tendang" "Monitor Akun Login" "Daftar Akun Aktif" "Daftar Akun Expired" "Disable Akun Expired" "Hapus Akun Expired" "Banned Akun" "Unbanned Akun" "Informasi RAM" "Speedtest" "Informasi VPS" "Non-Aktifkan Auto Kill Multi Login" "Aktifkan Auto Kill Multi Login" "Bersihkan Cache RAM" "Edit Banner SSH" "Restart Webmin" "Restart VPS" "Restart Dropbear" "Restart OpenSSH" "Restart Squid Proxy" "Restart OpenVPN" "Ganti Port OpenSSH" "Ganti Port Dropbear" "Ganti Port Squid Proxy" "Ganti Port OpenVPN" "Set Auto Reboot VPS" "Install/Re-Install OpenVPN" "Update Script Menu" "EXIT" )
 select opt in "${options[@]}"
 do
     case $opt in
@@ -377,6 +377,10 @@ Silahkan ganti port OpenVPN anda, lalu klik ENTER !!!" | boxes -d capgirl | lolc
 
 		OpenVPN Updated Port: $PORT" | boxes -d girl | lolcat
 		echo "                    _-_-_-_-_-_-_-_-_-_-" | lolcat
+	 break
+	 ;;
+	 "Set Auto Reboot VPS")
+	 auto-reboot
 	 break
 	 ;;
 	 "Update Script Menu")
